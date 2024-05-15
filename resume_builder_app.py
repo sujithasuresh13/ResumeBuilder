@@ -21,7 +21,7 @@ if api_key:
 
         llm = OpenAI(temperature=0.7, openai_api_key=api_key)
         st.header("Generated Resume")
-        st.warning("Prompt : ", prompt)
+        st.warning(prompt)
         st.text_area("Resume", value=llm(prompt), height=400)
 else:
     st.warning("Please enter your OpenAI API key.")
