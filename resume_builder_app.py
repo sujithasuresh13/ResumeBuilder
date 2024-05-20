@@ -48,7 +48,8 @@ def generate_response(name, email, phone, job_title, experience, education):
     chat_completion = client.chat.completions.create(
         model="mistralai/Mistral-7B-Instruct-v0.2",
         messages=[
-            prompt
+            {"role": "system", "content": "You are a professional resume writer."},
+            {"role": "user", "content": prompt},
         ],
         temperature=0.7,
         max_tokens=512,
